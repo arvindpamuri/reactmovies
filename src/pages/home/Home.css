@@ -1,0 +1,14 @@
+.page-div {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-div {
+    background-color: brown;
+    margin-top: 200px;
+}
+
+.header {
+    background-color: aqua;
+}
