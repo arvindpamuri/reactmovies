@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
+import baseurl from'./config';
 import './App.css';
 
 function App() {
@@ -20,13 +21,13 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:8000/movies")
+    fetch(`${baseurl}movies`)
     .then((res) => res.json())
     .then(data => setMovieData(data))
   },[]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/genres")
+    fetch(`${baseurl}genres`)
     .then((res) => res.json())
     .then(data => setGenres(data))
   },[]);
