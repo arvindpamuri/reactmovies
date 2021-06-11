@@ -1,7 +1,6 @@
 # Comments
 - Responsive.
 - Kept genres into dropdown, since it looked better. Can change it, if needed.
-- Movie detail 
 - Ideally, movie detail page should get data from server, but since data is small, used data from state. So, page doesn't work if that page is reloaded by user.
 
 
