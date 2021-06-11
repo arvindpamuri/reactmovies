@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Comments
+- Responsive.
+- Kept genres into dropdown, since it looked better. Can change it, if needed.
+- Movie detail 
+- Ideally, movie detail page should get data from server, but since data is small, used data from state. So, page doesn't work if that page is reloaded by user.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
