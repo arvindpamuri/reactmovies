@@ -1,0 +1,5 @@
+.movie-card:hover {
+    cursor: pointer;
+    border: 2px solid whitesmoke;
+
+}

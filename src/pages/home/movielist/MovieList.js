@@ -1,28 +1,33 @@
 import React from 'react';
-import { Col, Row, CardColumns, Card, CardDeck, CardGroup }  from 'react-bootstrap';
+import './MovieList.css';
+import { Col, Row, Card}  from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
-const MovieList = ({movieDisplayData}) => {
+const MovieList = ({movieDisplayData, setCurrentMovieNo}) => {
 
-    
+    const history = useHistory();
+
+
+    function handleMovieClick(no, title) {
+        setCurrentMovieNo(no)
+        history.push(`/movie-details/${no}`);
+    }
+
 
     if(Object.keys(movieDisplayData).length !== 0 ) {
 
         const lst = movieDisplayData.map((movie) => {
 
             return(
-                <Col className="col-3 col-md-4 col-sm-12">
+                <Col className="col-xs-12 col-sm-6 col-md-4">
+                
+                    <Card bg="secondary" className="movie-card" style={{ width: '16rem', minHeight: '150px', margin: '20px 0'}} key={movie.No} onClick={() => handleMovieClick(movie.No, movie.Title)}>
+                        <Card.Body className="d-flex align-items-center justify-content-center">
+                            <Card.Title>{movie.Title.slice(0, -7)}</Card.Title>
+                        </Card.Body>
 
-                <Card border="primary" style={{ width: '16rem', minHeight: '150px', margin: '20px 0'}} key={movie.No}>
-                    <Card.Body>
-                        <Card.Title>{movie.Title.slice(0, -7)}</Card.Title>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Col>Year: {movie.Title.slice(-5, -1)}</Col>
-                        <Col>Rating: {movie.Rating}</Col>
-                    </Card.Footer>
-                </Card>
+                    </Card>
                 </Col>
-
             );
         })
 

@@ -5,10 +5,13 @@
 }
 
 .content-div {
-    background-color: brown;
+    /* background-color: brown; */
     margin-top: 200px;
+    color: whitesmoke;
 }
 
 .header {
-    background-color: aqua;
+    color: whitesmoke;
+    /* background-color: aqua; */
 }
+
