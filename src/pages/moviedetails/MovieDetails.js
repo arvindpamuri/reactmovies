@@ -1,6 +1,5 @@
 import { useHistory } from 'react-router-dom';
 
-
 import './MovieDetails.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Container, Card, Button }  from 'react-bootstrap';

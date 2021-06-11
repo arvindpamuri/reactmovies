@@ -2,7 +2,7 @@ import Home from './pages/home/Home';
 import MovieDetails from './pages/moviedetails/MovieDetails';
 import {useState, useEffect} from 'react';
 
-import { BrowserRouter, Route, Redirect, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
 import './App.css';
 
@@ -11,9 +11,6 @@ function App() {
   const [genres, setGenres] = useState({});
   const [movieData, setMovieData] = useState({});
   const [currentMovieNo, setCurrentMovieNo] = useState("");
-
-  // console.log(currentMovieNo)
-  // console.log(movieData)
 
   let currentMovie;
 

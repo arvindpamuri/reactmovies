@@ -60,7 +60,7 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
             </Col>
           </Row>
 
-          <Row styleName={{minHeight: "500px"}}>
+          <Row stylename={{minHeight: "500px"}}>
             <MovieList 
               movieDisplayData={movieDisplayData} 
               setCurrentMovieNo={setCurrentMovieNo}
