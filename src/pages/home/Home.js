@@ -11,8 +11,8 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
   const [currentGenre, setCurrentGenre] = useState("All");
   const [ratingOrder, setRatingOrder] = useState(0);
 
+  // prepare movie list to display
   let movieDisplayData = {};
-
   if(Object.keys(genres).length !== 0 && Object.keys(movieData).length !== 0) {
 
     if(currentGenre === "All") {
@@ -31,6 +31,8 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
     }
   }
 
+
+  // prepare dropdown menu
   if(Object.keys(genres).length !== 0) {
 
     let genreList = genres.map((item) => {
@@ -58,7 +60,7 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
             </Col>
           </Row>
 
-          <Row>
+          <Row styleName={{minHeight: "500px"}}>
             <MovieList 
               movieDisplayData={movieDisplayData} 
               setCurrentMovieNo={setCurrentMovieNo}
@@ -71,7 +73,7 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
   }
 
   else {
-    return(<div>hello</div>);
+    return(<div></div>);
   }
 }
 

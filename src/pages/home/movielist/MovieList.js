@@ -1,5 +1,7 @@
 import React from 'react';
 import './MovieList.css';
+import Loader from './../../../Loader';
+
 import { Col, Row, Card}  from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
