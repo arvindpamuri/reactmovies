@@ -8,14 +8,21 @@ import { Container, Col, Row, DropdownButton, Button, Dropdown }  from 'react-bo
 
 const Home = ({genres, movieData, setCurrentMovieNo}) => {
 
-  const [currentGenre, setCurrentGenre] = useState("Select Genre");
+  const [currentGenre, setCurrentGenre] = useState("All");
   const [ratingOrder, setRatingOrder] = useState(0);
 
   let movieDisplayData = {};
 
   if(Object.keys(genres).length !== 0 && Object.keys(movieData).length !== 0) {
 
-    movieDisplayData = movieData.filter((movie) => movie.Genre===currentGenre);
+    if(currentGenre === "All") {
+      movieDisplayData = movieData;
+    }
+
+    else {
+      movieDisplayData = movieData.filter((movie) => movie.Genre===currentGenre);
+    }
+
     if(ratingOrder) {
       movieDisplayData.sort((x,y) => x.Rating - y.Rating);
     }
@@ -39,6 +46,7 @@ const Home = ({genres, movieData, setCurrentMovieNo}) => {
             <Col className="col-12 col-md-4 mb-2"><h3>TOP MOVIES BY GENRE</h3></Col>
             <Col className="col-12 col-md-4 mb-2">
               <DropdownButton variant="secondary" id="dropdown-basic-button" title={currentGenre} size="lg">
+                <Dropdown.Item onClick={()=> setCurrentGenre("All")}>All</Dropdown.Item>
                 {genreList}
               </DropdownButton>
             </Col>
